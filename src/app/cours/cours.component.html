@@ -1,1 +1,14 @@
-<p>cours works!</p>
+<div *ngIf="users.length > 0">
+    <h2>Liste des apprenants</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.firstName }} {{ user.lastName }}
+      </li>
+    </ul>
+    <button (click)="saveAsJson()">Télécharger en JSON</button>
+  </div>
+  
+  <div *ngIf="users.length === 0">
+    <p>Aucun apprenants trouvé.</p>
+  </div>
+  
